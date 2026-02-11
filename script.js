@@ -8,14 +8,14 @@ function startBackgroundMusic() {
   musicStarted = true;
   audio.volume = 0.6;
   audio.muted = false;
-  audio.play().catch(function() {});
+  audio.play().catch(function () { });
 }
 audio.muted = true;
-audio.play().then(function() {
+audio.play().then(function () {
   audio.muted = false;
   musicStarted = true;
   audio.volume = 0.6;
-}).catch(function() {});
+}).catch(function () { });
 document.addEventListener('click', startBackgroundMusic, { once: true });
 document.addEventListener('touchstart', startBackgroundMusic, { once: true });
 document.addEventListener('keydown', startBackgroundMusic, { once: true });
@@ -240,7 +240,7 @@ if (btnNo) {
       noClickStage = 2;
     } else if (noClickStage === 2) {
       if (typeof sayYes === 'function') {
-          // If sayYes isn't defined here (it is above), this is safe
+        // If sayYes isn't defined here (it is above), this is safe
       }
       this.textContent = 'Yes 💖';
       noClickStage = 3;
@@ -262,24 +262,24 @@ const encodedIds = [
 ];
 
 function loadSecretPhotos() {
-    const container = document.getElementById('step3PhotoSplash');
-    if (!container || container.hasChildNodes()) return; // Already loaded or not found
+  const container = document.getElementById('step3PhotoSplash');
+  if (!container || container.hasChildNodes()) return; // Already loaded or not found
 
-    encodedIds.forEach(id => {
-        try {
-            // Decode from Base64
-            const decodedId = atob(id);
-            // Create image element
-            const img = document.createElement('img');
-            img.src = `https://drive.google.com/thumbnail?id=${decodedId}&sz=w1000`;
-            img.alt = "";
-            img.loading = "lazy";
-            img.decoding = "async";
-            container.appendChild(img);
-        } catch (e) {
-            console.error("Failed to decode image ID", e);
-        }
-    });
+  encodedIds.forEach(id => {
+    try {
+      // Decode from Base64
+      const decodedId = atob(id);
+      // Create image element
+      const img = document.createElement('img');
+      img.src = `https://drive.google.com/thumbnail?id=${decodedId}&sz=w1000`;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      container.appendChild(img);
+    } catch (e) {
+      console.error("Failed to decode image ID", e);
+    }
+  });
 }
 
 /* 
@@ -297,7 +297,10 @@ function loadSecretPhotos() {
    
    Let's just load them on DOMContentLoaded so they are ready when the user gets to step 3.
 */
-document.addEventListener('DOMContentLoaded', () => {
-    loadSecretPhotos();
-});
+// Load photos as soon as possible
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadSecretPhotos);
+} else {
+  loadSecretPhotos();
+}
 
