@@ -1,0 +1,14 @@
+
+# Exclude private photos
+pictures1/IMG_4435.PNG
+pictures1/IMG_4436.PNG
+pictures1/IMG_4448.PNG
+pictures1/IMG_4768.PNG
+pictures1/IMG_4770.PNG
+pictures1/IMG_4771.PNG
+
+# Keep catrose.png (it is not excluded above)
+
+# System files
+Desktop.ini
+Thumbs.db
