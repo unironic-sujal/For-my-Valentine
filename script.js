@@ -253,12 +253,12 @@ if (btnNo) {
 // --- Obfuscated Image Loader ---
 // These are Base64 encoded Google Drive IDs to prevent casual viewing in source code
 const encodedIds = [
-  "MXVOSEdBM3BjWGhYekh5M0lEX2tucHBpc194MmF1ZDBu",
-  "MUM2SHlrLThWU3RURmpjVS1ZNThJNmF1QnAyVlVIQ2JE",
-  "MXljY3NUdmNlMWlHMGtQY0N0WktUWW9ZcUpVME9tY2s=",
-  "MTdjQWtBZmN0Rml1UEprVklaVWxUc1AxQWdYNHRxSlg2",
-  "MXUwT1F6MjlOcUNLOTN1ZkIzTHFPTFlSMGwzcWNrVnZC",
-  "MXJrTnNQOGJSQjlodVZCUFU5VVJKc3k5TlF2cUJpaE5R"
+  "aHR0cHM6Ly9naXRodWIuY29tL3VzZXItYXR0YWNobWVudHMvYXNzZXRzL2RiNjM1MmFiLTI0M2EtNDA2MC1hMDdmLTczNDM3YzRkZWI1Mg==",
+  "aHR0cHM6Ly9naXRodWIuY29tL3VzZXItYXR0YWNobWVudHMvYXNzZXRzLzdiMzJhODY5LTgwMTUtNGRiNi1iNTk2LWY0OTUwMjU4NDMwYQ==",
+  "aHR0cHM6Ly9naXRodWIuY29tL3VzZXItYXR0YWNobWVudHMvYXNzZXRzLzY0Y2IzN2I3LTFjOWMtNDI5Mi04NzY3LWRmNWQ5ZjNmZjcyNw==",
+  "aHR0cHM6Ly9naXRodWIuY29tL3VzZXItYXR0YWNobWVudHMvYXNzZXRzLzJmZGM3NTIzLWFhNTctNDkwMC04ZjY3LTM2ZDY4OTc4ZDE4Zg==",
+  "aHR0cHM6Ly9naXRodWIuY29tL3VzZXItYXR0YWNobWVudHMvYXNzZXRzLzdmZDg5MGVlLTNiYTMtNDUzNS1iYzc1LTNhMWY0ZTY4MjFiNw==",
+  "aHR0cHM6Ly9naXRodWIuY29tL3VzZXItYXR0YWNobWVudHMvYXNzZXRzLzRhMzJiNzEyLWNmMWYtNDAyNi05YjkzLWMyYzFhYTA1YjQyMg=="
 ];
 
 function loadSecretPhotos() {
@@ -268,16 +268,16 @@ function loadSecretPhotos() {
   encodedIds.forEach(id => {
     try {
       // Decode from Base64
-      const decodedId = atob(id);
+      const decodedUrl = atob(id);
       // Create image element
       const img = document.createElement('img');
-      img.src = `https://drive.google.com/thumbnail?id=${decodedId}&sz=w1000`;
+      img.src = decodedUrl;
       img.alt = "";
       img.loading = "lazy";
       img.decoding = "async";
       container.appendChild(img);
     } catch (e) {
-      console.error("Failed to decode image ID", e);
+      console.error("Failed to decode image URL", e);
     }
   });
 }
