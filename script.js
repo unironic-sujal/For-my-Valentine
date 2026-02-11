@@ -239,6 +239,9 @@ if (btnNo) {
       this.textContent = 'Not allowed hehe';
       noClickStage = 2;
     } else if (noClickStage === 2) {
+      if (typeof sayYes === 'function') {
+          // If sayYes isn't defined here (it is above), this is safe
+      }
       this.textContent = 'Yes 💖';
       noClickStage = 3;
     } else if (noClickStage === 3) {
@@ -246,4 +249,55 @@ if (btnNo) {
     }
   });
 }
+
+// --- Obfuscated Image Loader ---
+// These are Base64 encoded Google Drive IDs to prevent casual viewing in source code
+const encodedIds = [
+  "MXVOSEdBM3BjWGhYekh5M0lEX2tucHBpc194MmF1ZDBu",
+  "MUM2SHlrLThWU3RURmpjVS1ZNThJNmF1QnAyVlVIQ2JE",
+  "MXljY3NUdmNlMWlHMGtQY0N0WktUWW9ZcUpVME9tY2s=",
+  "MTdjQWtBZmN0Rml1UEprVklaVWxUc1AxQWdYNHRxSlg2",
+  "MXUwT1F6MjlOcUNLOTN1ZkIzTHFPTFlSMGwzcWNrVnZC",
+  "MXJrTnNQOGJSQjlodVZCUFU5VVJKc3k5TlF2cUJpaE5R"
+];
+
+function loadSecretPhotos() {
+    const container = document.getElementById('step3PhotoSplash');
+    if (!container || container.hasChildNodes()) return; // Already loaded or not found
+
+    encodedIds.forEach(id => {
+        try {
+            // Decode from Base64
+            const decodedId = atob(id);
+            // Create image element
+            const img = document.createElement('img');
+            img.src = `https://drive.google.com/thumbnail?id=${decodedId}&sz=w1000`;
+            img.alt = "";
+            img.loading = "lazy";
+            img.decoding = "async";
+            container.appendChild(img);
+        } catch (e) {
+            console.error("Failed to decode image ID", e);
+        }
+    });
+}
+
+/* 
+   We need to hook into the existing goToStep function to load photos when step 3 is shown.
+   However, goToStep is defined as a function declaration above, so we can't overwrite it easily 
+   without changing the original definition or doing a wrapper if it was a var/let.
+   
+   Instead, we will add a check in a setInterval or simply load them when the page loads 
+   but keep them hidden until step 3 is active (which CSS handles).
+   
+   Actually, the simplest way to "hook" without rewriting the whole function 
+   is to just load them immediately on page load. 
+   The CSS `display: none` (via .hidden class on parent section) prevents them from fetching/rendering 
+   too aggressively usually, but `loading="lazy"` also helps.
+   
+   Let's just load them on DOMContentLoaded so they are ready when the user gets to step 3.
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    loadSecretPhotos();
+});
 
