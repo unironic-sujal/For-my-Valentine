@@ -29,9 +29,17 @@ body {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Live floating hearts background – continuous rise */
@@ -52,41 +60,164 @@ body {
   color: #c41e3a;
 }
 
-.heart-float:nth-child(1)  { left: 5%;  animation-duration: 8s;  animation-delay: 0s;   font-size: 0.9rem; }
-.heart-float:nth-child(2)  { left: 12%; animation-duration: 11s; animation-delay: 1s;  font-size: 1.2rem; }
-.heart-float:nth-child(3)  { left: 22%; animation-duration: 9s;  animation-delay: 3s;  font-size: 0.7rem; }
-.heart-float:nth-child(4)  { left: 35%; animation-duration: 13s; animation-delay: 0.5s; font-size: 1.1rem; }
-.heart-float:nth-child(5)  { left: 48%; animation-duration: 10s; animation-delay: 2s;  font-size: 0.85rem; }
-.heart-float:nth-child(6)  { left: 58%; animation-duration: 12s; animation-delay: 4s;  font-size: 1rem; }
-.heart-float:nth-child(7)  { left: 68%; animation-duration: 9s;  animation-delay: 1.5s; font-size: 0.75rem; }
-.heart-float:nth-child(8)  { left: 78%; animation-duration: 11s; animation-delay: 2.5s; font-size: 1.15rem; }
-.heart-float:nth-child(9)  { left: 88%; animation-duration: 10s; animation-delay: 0.2s; font-size: 0.8rem; }
-.heart-float:nth-child(10) { left: 95%; animation-duration: 14s; animation-delay: 3.5s; font-size: 1rem; }
-.heart-float:nth-child(11) { left: 8%;  animation-duration: 15s; animation-delay: 5s;  font-size: 0.65rem; }
-.heart-float:nth-child(12) { left: 28%; animation-duration: 10s; animation-delay: 6s;  font-size: 0.95rem; }
-.heart-float:nth-child(13) { left: 42%; animation-duration: 11s; animation-delay: 4.5s; font-size: 0.7rem; }
-.heart-float:nth-child(14) { left: 55%; animation-duration: 9s;  animation-delay: 7s;  font-size: 1.05rem; }
-.heart-float:nth-child(15) { left: 72%; animation-duration: 12s; animation-delay: 5.5s; font-size: 0.8rem; }
-.heart-float:nth-child(16) { left: 82%; animation-duration: 8s;  animation-delay: 2.2s; font-size: 0.9rem; }
-.heart-float:nth-child(17) { left: 18%; animation-duration: 13s; animation-delay: 8s;  font-size: 0.75rem; }
-.heart-float:nth-child(18) { left: 52%; animation-duration: 10s; animation-delay: 1s;  font-size: 1rem; }
-.heart-float:nth-child(19) { left: 62%; animation-duration: 14s; animation-delay: 6.5s; font-size: 0.85rem; }
-.heart-float:nth-child(20) { left: 92%; animation-duration: 9s;  animation-delay: 4s;  font-size: 0.7rem; }
+.heart-float:nth-child(1) {
+  left: 5%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  font-size: 0.9rem;
+}
+
+.heart-float:nth-child(2) {
+  left: 12%;
+  animation-duration: 11s;
+  animation-delay: 1s;
+  font-size: 1.2rem;
+}
+
+.heart-float:nth-child(3) {
+  left: 22%;
+  animation-duration: 9s;
+  animation-delay: 3s;
+  font-size: 0.7rem;
+}
+
+.heart-float:nth-child(4) {
+  left: 35%;
+  animation-duration: 13s;
+  animation-delay: 0.5s;
+  font-size: 1.1rem;
+}
+
+.heart-float:nth-child(5) {
+  left: 48%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  font-size: 0.85rem;
+}
+
+.heart-float:nth-child(6) {
+  left: 58%;
+  animation-duration: 12s;
+  animation-delay: 4s;
+  font-size: 1rem;
+}
+
+.heart-float:nth-child(7) {
+  left: 68%;
+  animation-duration: 9s;
+  animation-delay: 1.5s;
+  font-size: 0.75rem;
+}
+
+.heart-float:nth-child(8) {
+  left: 78%;
+  animation-duration: 11s;
+  animation-delay: 2.5s;
+  font-size: 1.15rem;
+}
+
+.heart-float:nth-child(9) {
+  left: 88%;
+  animation-duration: 10s;
+  animation-delay: 0.2s;
+  font-size: 0.8rem;
+}
+
+.heart-float:nth-child(10) {
+  left: 95%;
+  animation-duration: 14s;
+  animation-delay: 3.5s;
+  font-size: 1rem;
+}
+
+.heart-float:nth-child(11) {
+  left: 8%;
+  animation-duration: 15s;
+  animation-delay: 5s;
+  font-size: 0.65rem;
+}
+
+.heart-float:nth-child(12) {
+  left: 28%;
+  animation-duration: 10s;
+  animation-delay: 6s;
+  font-size: 0.95rem;
+}
+
+.heart-float:nth-child(13) {
+  left: 42%;
+  animation-duration: 11s;
+  animation-delay: 4.5s;
+  font-size: 0.7rem;
+}
+
+.heart-float:nth-child(14) {
+  left: 55%;
+  animation-duration: 9s;
+  animation-delay: 7s;
+  font-size: 1.05rem;
+}
+
+.heart-float:nth-child(15) {
+  left: 72%;
+  animation-duration: 12s;
+  animation-delay: 5.5s;
+  font-size: 0.8rem;
+}
+
+.heart-float:nth-child(16) {
+  left: 82%;
+  animation-duration: 8s;
+  animation-delay: 2.2s;
+  font-size: 0.9rem;
+}
+
+.heart-float:nth-child(17) {
+  left: 18%;
+  animation-duration: 13s;
+  animation-delay: 8s;
+  font-size: 0.75rem;
+}
+
+.heart-float:nth-child(18) {
+  left: 52%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+  font-size: 1rem;
+}
+
+.heart-float:nth-child(19) {
+  left: 62%;
+  animation-duration: 14s;
+  animation-delay: 6.5s;
+  font-size: 0.85rem;
+}
+
+.heart-float:nth-child(20) {
+  left: 92%;
+  animation-duration: 9s;
+  animation-delay: 4s;
+  font-size: 0.7rem;
+}
 
 @keyframes rise {
   0% {
     transform: translateY(0) translateX(0) rotate(0deg);
     opacity: 0;
   }
+
   5% {
     opacity: 0.25;
   }
+
   50% {
     transform: translateY(-50vh) translateX(8px) rotate(180deg);
   }
+
   95% {
     opacity: 0.2;
   }
+
   100% {
     transform: translateY(-110vh) translateX(-5px) rotate(360deg);
     opacity: 0;
@@ -116,7 +247,8 @@ body {
   display: none;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   text-align: center;
@@ -184,8 +316,15 @@ h1, h2 {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /* Step 7 - The question */
@@ -205,12 +344,15 @@ h1, h2 {
     transform: scale(0.18);
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   88% {
     transform: scale(1.12);
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -241,6 +383,7 @@ h1, h2 {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -297,8 +440,15 @@ h1, h2 {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .step-8 h1 {
@@ -422,6 +572,86 @@ h1, h2 {
   transition: opacity 0.2s;
 }
 
+/* Video Container */
+.video-container {
+  display: inline-block;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-container video {
+  display: block;
+  max-width: 95vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin: 20px auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  /* Custom Scrollbar for style */
+  scrollbar-width: thin;
+  scrollbar-color: #ff4d6d #ffe6e9;
+}
+
+.gallery-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gallery-grid::-webkit-scrollbar-track {
+  background: #ffe6e9;
+  border-radius: 4px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb {
+  background-color: #ff4d6d;
+  border-radius: 4px;
+  border: 2px solid #ffe6e9;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 50vh;
+  }
+}
+
 .confetti {
   position: fixed;
   width: 10px;
@@ -437,6 +667,7 @@ h1, h2 {
     transform: translateY(-100vh) rotate(0deg);
     opacity: 1;
   }
+
   100% {
     transform: translateY(100vh) rotate(720deg);
     opacity: 0;
@@ -554,27 +785,69 @@ h1, h2 {
 }
 
 @keyframes floatSoft1 {
-  0%   { transform: translate3d(  0px,  0px, 0); }
-  25%  { transform: translate3d( 10px, -6px, 0); }
-  50%  { transform: translate3d(  0px,-10px, 0); }
-  75%  { transform: translate3d(-10px, -6px, 0); }
-  100% { transform: translate3d(  0px,  0px, 0); }
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+
+  25% {
+    transform: translate3d(10px, -6px, 0);
+  }
+
+  50% {
+    transform: translate3d(0px, -10px, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, -6px, 0);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
 }
 
 @keyframes floatSoft2 {
-  0%   { transform: translate3d(  0px,  0px, 0); }
-  25%  { transform: translate3d(-12px, -5px, 0); }
-  50%  { transform: translate3d(  0px, -9px, 0); }
-  75%  { transform: translate3d( 12px, -5px, 0); }
-  100% { transform: translate3d(  0px,  0px, 0); }
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+
+  25% {
+    transform: translate3d(-12px, -5px, 0);
+  }
+
+  50% {
+    transform: translate3d(0px, -9px, 0);
+  }
+
+  75% {
+    transform: translate3d(12px, -5px, 0);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
 }
 
 @keyframes floatSoft3 {
-  0%   { transform: translate3d(  0px,  0px, 0); }
-  25%  { transform: translate3d( 14px, -7px, 0); }
-  50%  { transform: translate3d(  0px,-11px, 0); }
-  75%  { transform: translate3d(-14px, -7px, 0); }
-  100% { transform: translate3d(  0px,  0px, 0); }
+  0% {
+    transform: translate3d(0px, 0px, 0);
+  }
+
+  25% {
+    transform: translate3d(14px, -7px, 0);
+  }
+
+  50% {
+    transform: translate3d(0px, -11px, 0);
+  }
+
+  75% {
+    transform: translate3d(-14px, -7px, 0);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
 }
 
 @media (max-width: 520px) {

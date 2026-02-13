@@ -20,11 +20,13 @@ document.addEventListener('click', startBackgroundMusic, { once: true });
 document.addEventListener('touchstart', startBackgroundMusic, { once: true });
 document.addEventListener('keydown', startBackgroundMusic, { once: true });
 
-const totalSteps = 7;
+const totalSteps = 10;
 let currentStep = 1;
 let noClicks = 0;
 let noClickStage = 0;
 let currentQuizIndex = 0;
+
+// ... (quizQuestions array remains same) ...
 
 const quizQuestions = [
   {
@@ -190,17 +192,58 @@ function goToStep(stepNum) {
     if (d === stepNum) dot.classList.add('active');
   });
 
+  // Handle dots visibility
   if (stepNum <= 7) {
     document.getElementById('progressDots').style.display = 'flex';
-  }
-  if (stepNum === 8) {
+  } else {
     document.getElementById('progressDots').style.display = 'none';
   }
 
   currentStep = stepNum;
+
+  // Step-specific logic
   if (stepNum === 5) {
     currentQuizIndex = 0;
     renderQuizQuestion();
+  }
+
+  // Handle Video Step (9)
+  const giftVideo = document.getElementById('giftVideo');
+  if (stepNum === 9) {
+    if (audio) audio.pause(); // Pause bg music
+    if (giftVideo) {
+      giftVideo.currentTime = 0;
+      giftVideo.play().catch(e => console.log('Video autoplay blocked', e));
+    }
+  } else {
+    // Determine if we should resume music
+    if (stepNum !== 9 && musicStarted && audio.paused) {
+      audio.play().catch(() => { });
+    }
+    // Pause video if leaving step 9
+    if (giftVideo) giftVideo.pause();
+  }
+
+  // Handle Gallery Step (10)
+  if (stepNum === 10) {
+    renderGallery();
+  }
+}
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  if (!grid || grid.children.length > 0) return; // already rendered
+
+  // Images 000 to 019
+  for (let i = 0; i <= 19; i++) {
+    const num = i.toString().padStart(3, '0');
+    const filename = `File_${num}.png`;
+    const img = document.createElement('img');
+    img.src = `donation content/${filename}`;
+    img.alt = "Donation event photo";
+    img.loading = "lazy";
+    img.style.animationDelay = `${i * 0.1}s`; // staggered fade-in
+    grid.appendChild(img);
   }
 }
 
